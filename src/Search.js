@@ -1,5 +1,13 @@
 import React from 'react';
 import { Parameter } from  './restricedCode.js';
+import './search.css';
+
+const urls = {
+  Default: "https://webhose.io/filterWebContent?token=${Parameter.Token}&q=\"${this.state.search}\"",
+  Format: "https://webhose.io/filterWebContent?token=${Parameter.Token}&format=${Parameter.Format.json}&q=\"${this.state.search}\"",
+
+
+}
 
 class SearchFeed extends React.Component {
     constructor(props) {
@@ -24,11 +32,14 @@ class SearchFeed extends React.Component {
     //TODO Customzie the search bar and button
     render() {
       return (
-        <form onSubmit={this.handleSubmit}>
-          <input type="text" value={this.state.search} onChange={event => this.setState({search: event.target.value})} 
-            placeholder="Enter news by topic, name, date...." />
-          <button>Search</button>
-        </form>
+        <React.Fragment>
+          <form onSubmit={this.handleSubmit}>
+            <span style={{paddingRight: '16px'}}>Search here: </span>
+            <input type="text" value={this.state.search} onChange={event => this.setState({search: event.target.value})} 
+              placeholder="Enter news by topic, name, date...." />
+            <button>Search</button>
+          </form>
+        </React.Fragment>
       )
     }
 }
