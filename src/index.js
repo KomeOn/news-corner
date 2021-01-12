@@ -1,22 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import SearchFeed from './Search';
+import CardList from './result';
+import SearchFeed from './search';
+import RecentList from './recent';
 import reportWebVitals from './reportWebVitals';
-
-
-const CardList = (props) => (
-    <div>
-      {props.searchResult.map(news => <App topicName={props.topicName} key={news['uuid']} {...news} /> )}
-    </div>
-);
 
 class NewsFeed extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      recent: [],
       topicName: " ",
       searchResult: [],
     }
@@ -34,6 +27,9 @@ class NewsFeed extends React.Component {
     return (
       <React.Fragment>
       <SearchFeed onSubmit={this.searchTopic}/>
+      <h1>-------------------Recent--------------------</h1>
+      <RecentList />
+      <h1>-------------------Search Result-------------</h1>
       <CardList topicName={this.state.topicName} searchResult={this.state.searchResult}/>
       </React.Fragment>
     );

@@ -1,10 +1,21 @@
 import React from 'react';
-import './App.css';
 
-export default class App extends React.Component {  
+export default function CardList(props) { //TODO change the name of function "NewsList"
+    return (
+        <div>
+            {props.searchResult.map(news => <Result topicName={props.topicName} key={news['uuid']} {...news} />)}
+        </div>
+    );
+}
+
+class Result extends React.Component {  //TODO change the name of function to "NewsCard"
   render() {
     const data = this.props;
-    console.log("App: ",data);
+    console.log("App: ",data); //TODO remove this section
+    //TODO restructure the return() function to display it like a card
+    //TODO Remove: UUID, URL 'p' tag
+    //TODO Redesign: Author, Published, Title, Text, 'a' tag
+    
     return (
       <div>
         <p>UUID: {data['uuid']}</p>

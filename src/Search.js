@@ -10,14 +10,18 @@ class SearchFeed extends React.Component {
     }
   
     handleSubmit = async (event) => {
+      //TODO  Add more filters for language, format, highlight, sitetype, country with buttons. Bonus: Add date-time filter
       event.preventDefault();
       let resp = await fetch(`https://webhose.io/filterWebContent?token=${Parameter.Token}&format=${Parameter.Format.json}&q="${this.state.search}" language:${Parameter.Languages.English}`);
       //let resp = await fetch(`https://webhose.io/filterWebContent?token=${Parameter.Token}&format=${Parameter.Format.json}&q="oneplus" language:${Parameter.Languages.English}`);
       //let resp = await fetch('https://api.github.com/users/KomeOn');
       let data = await resp.json();
       console.log("Data: ", data['posts']);
+      this.setState({search: ''})
       this.props.onSubmit(this.state.search, data['posts']);
     }
+
+    //TODO Customzie the search bar and button
     render() {
       return (
         <form onSubmit={this.handleSubmit}>
