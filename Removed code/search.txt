@@ -1,0 +1,199 @@
+checkURL() {
+    debugger
+    let obj = this.state.parameters;
+    if (obj.author == "" && obj.country == "" && 
+    obj.format == "Default" && obj.highLight === "False" && 
+    obj.languages == "Default" && obj.published == "" && 
+    obj.siteType == "Any") {
+      return `https://webhose.io/filterWebContent?token=${Parameter.Token}&size=10&q="${this.state.search}"`;
+    }
+    else if (obj.author == "" && obj.country == "" && 
+    obj.format != "Default" && obj.highLight === "False" && 
+    obj.languages != "Default" && obj.published == "" && 
+    obj.siteType != "Any") 
+    { 
+      if (obj.format == "json" || obj.format == "Json" && obj.languages == "english" || obj.languages == "English") {
+        return `https://webhose.io/filterWebContent?token=${Parameter.Token}&format=${Parameter.Format.Json}&size=10&q="${this.state.search}" language:${Parameter.Languages.English}`;
+      }
+      else if (obj.format == "json" || obj.format == "Json" && obj.languages == "hindi" || obj.languages == "Hindi") {
+      return `https://webhose.io/filterWebContent?token=${Parameter.Token}&format=${Parameter.Format.Json}&size=10&q="${this.state.search}" language:${Parameter.Languages.Hindi}`;
+      }
+      else if (obj.format == "json" || obj.format == "Json" && obj.languages == "assamese" || obj.languages == "Assamese") {
+        return `https://webhose.io/filterWebContent?token=${Parameter.Token}&format=${Parameter.Format.Json}&size=10&q="${this.state.search}" language:${Parameter.Languages.Assamese}`;
+      }
+    }
+    else if (obj.author == "" && obj.country == "" && 
+    obj.format != "Default" && obj.highLight === "False" && 
+    obj.languages != "Default" && obj.published == "" && 
+    obj.siteType == "News") {
+      if (obj.format == "json" || obj.format == "Json" && obj.languages == "english" || obj.languages == "English") {
+        return `https://webhose.io/filterWebContent?token=${Parameter.Token}&format=${Parameter.Format.Json}&site_type=news&size=10&q="${this.state.search}" language:${Parameter.Languages.English}`;
+      }
+      else if (obj.format == "json" || obj.format == "Json" && obj.languages == "hindi" || obj.languages == "Hindi") {
+      return `https://webhose.io/filterWebContent?token=${Parameter.Token}&format=${Parameter.Format.Json}&site_type=news&size=10&q="${this.state.search}" language:${Parameter.Languages.Hindi}`;
+      }
+      else if (obj.format == "json" || obj.format == "Json" && obj.languages == "assamese" || obj.languages == "Assamese") {
+        return `https://webhose.io/filterWebContent?token=${Parameter.Token}&format=${Parameter.Format.Json}&site_type=news&size=10&q="${this.state.search}" language:${Parameter.Languages.Assamese}`;
+      }
+    }
+  }
+
+  this.checkURL = this.checkURL.bind(this);
+  this.handleCheckformats = this.handleCheckformats.bind(this);
+  this.handleChecklanguages = this.handleChecklanguages.bind(this);
+  this.handleChecktypes = this.handleChecktypes.bind(this);
+
+  handleCheckformats(events) {
+    let val1 = events.target.value;
+    let obj1 = this.state.parameters;
+    console.log("Formats: ", val1);
+    if (obj1.format != val1)
+    {
+      this.setState(prevState => ({
+        parameters: {
+          ...prevState.parameters,
+          format: val1
+        }
+      })) 
+    }
+    else {
+      this.setState(prevState => ({
+        parameters: {
+          ...prevState.parameters,
+          format: 'Default'
+        }
+      }))
+    }
+  }
+
+  handleChecktypes(events) {
+    let val3 = events.target.value;
+    let obj3 = this.state.parameters;
+    console.log("Types: ", val3);
+    if (obj3.format == val3)
+    {
+      this.setState(prevState => ({
+        parameters: {
+          ...prevState.parameters,
+          siteType: 'Any'
+        }
+      })) 
+    }
+    else {
+      this.setState(prevState => ({
+        parameters: {
+          ...prevState.parameters,
+          siteType: val3
+        }
+      })) 
+    }
+  }
+
+  handleChecklanguages(events) {
+    let val2 = events.target.value;
+    let obj2 = this.state.parameters;
+    console.log("Languages: ", val2);
+    if (val2 == "english" || val2 == "English" || val2 == "hindi" || val2 == "Hindi" || val2 == "assamese" || val2 == "Assamese") {
+      if (obj2.format != val2)
+      {
+        this.setState(prevState => ({
+          parameters: {
+            ...prevState.parameters,
+            languages: val2
+          }
+        })) 
+      }
+    }
+    else {
+      this.setState(prevState => ({
+        parameters: {
+          ...prevState.parameters,
+          languages: 'Default'
+        }
+      }))
+    } 
+  }
+
+  handleChecktypes(events) {
+    let val3 = events.target.value;
+    let obj3 = this.state.parameters;
+    console.log("Types: ", val3);
+    if (obj3.format == val3)
+    {
+      this.setState(prevState => ({
+        parameters: {
+          ...prevState.parameters,
+          siteType: 'Any'
+        }
+      })) 
+    }
+    else {
+      this.setState(prevState => ({
+        parameters: {
+          ...prevState.parameters,
+          siteType: val3
+        }
+      })) 
+    }
+  }
+
+<label>
+              JSON: 
+              <input type="checkbox" value="JSON" onClick={this.handleCheckformats}/>
+            </label>
+            <label>
+              English: 
+              <input type="checkbox" value="English" onClick={this.handleChecklanguages}/>
+            </label>
+            <label>
+              Hindi: 
+              <input type="checkbox" value="Hindi" onClick={this.handleChecklanguages}/>
+            </label>
+            <label>
+              Assamese: 
+              <input type="checkbox" value="Assamese" onClick={this.handleChecklanguages}/>
+            </label>
+            <label>
+              News: 
+              <input type="checkbox" value="News" onClick={this.handleChecktypes}/>
+            </label>
+
+parameters: {
+  format: 'Default',
+  highLight: 'False',
+  languages: 'Default',
+  author: "",
+  published: "",
+  siteType: 'Any',
+  country: ""
+}
+
+<label>
+              JSON 
+              <input type="radio" name="news" value='Format' onClick={this.handleURL} />
+            </label>
+            <label>
+              English
+              <input type="radio" name="news" value='ForLangEngNew' onClick={this.handleURL} />
+            </label>
+
+handleURL = (events) => {
+      let val = events.target.value;
+      let urls;
+      if (val === 'Format') {
+        urls = Parameter.URL.Format + this.state.search
+        this.setState({
+          url: urls
+        })
+        console.log("URL", this.state.url);
+      }
+      else if (val === 'ForLangEngNew') {
+        urls = Parameter.URL.Format + this.state.search + " language:English"
+        this.setState({
+          url: urls
+        })
+        console.log("URL", this.state.url); 
+      }
+    }
+
+    this.handleURL = this.handleURL.bind(this);

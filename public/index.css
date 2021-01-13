@@ -1,5 +1,6 @@
 body {
     overflow-x: hidden;
+    background: #333;
 }
 
 nav {
@@ -39,8 +40,19 @@ nav a.active {
     color: white;
 }
 
+.left-aside {
+    display: flex;
+    padding-left: 36%;
+}
+
+.left-aside a {
+    padding: 0;
+    padding-left: 15px;
+}
+
 .App-logo {
     pointer-events: none;
+    margin: auto;
   }
   
 @media (prefers-reduced-motion: no-preference) {

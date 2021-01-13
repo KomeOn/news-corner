@@ -20,14 +20,13 @@ class NewsFeed extends React.Component {
                     topicName: topic,
                     searchResult: data,
                     });
-   console.log("in:", this.state.searchResult) 
+   //console.log("in:", this.state.searchResult) 
   };
 
   render() {
     return (
       <React.Fragment>
       <SearchFeed onSubmit={this.searchTopic}/>
-      <h1>-------------------Recent--------------------</h1>
       <RecentList />
       <h1>-------------------Search Result-------------</h1>
       <CardList topicName={this.state.topicName} searchResult={this.state.searchResult}/>

@@ -7,10 +7,11 @@ const token = 'a831f6da-e17b-4615-b33c-34a1d50b726c';
 
 // format for the respone query
 const format = {
-    json: 'json',
-    xml: 'xml',
-    rss: 'rss',
-    excel: 'excel'
+    default: 'none',
+    Json: 'json',
+    XML: 'xml',
+    RSS: 'rss',
+    Excel: 'excel'
 }
 
 const highLight = {
@@ -19,6 +20,7 @@ const highLight = {
 }
 
 const languages = {
+    default: 'none',
     English: 'english',
     Hindi: 'hindi',
     Assamese: 'assamese',
@@ -43,6 +45,14 @@ const threadCountry = {
     Australia: 'AU'
 }
 
+const urls = {
+    Default: "https://webhose.io/filterWebContent?token=a831f6da-e17b-4615-b33c-34a1d50b726c&size=10&sort=relevancy&q=",
+    Format: "https://webhose.io/filterWebContent?token=a831f6da-e17b-4615-b33c-34a1d50b726c&size=10&format=json&sort=relevancy&q=",
+    ForLangEng: "https://webhose.io/filterWebContent?token=a831f6da-e17b-4615-b33c-34a1d50b726c&size=10&format=json&sort=relevancy&q=",
+    ForLangHind: "https://webhose.io/filterWebContent?token=a831f6da-e17b-4615-b33c-34a1d50b726c&size=10&format=json&sort=relevancy&q=",
+    ForLangEngNew: "https://webhose.io/filterWebContent?token=a831f6da-e17b-4615-b33c-34a1d50b726c&size_type=news&size=10&format=json&sort=relevancy&q=",
+  }  
+
 export const Parameter = {
     Token: token,
     Format: format,
@@ -51,5 +61,6 @@ export const Parameter = {
     Author: author,
     Published: published,
     SiteType: siteType,
-    ThreadCountry: threadCountry
+    ThreadCountry: threadCountry,
+    URL: urls
 }
