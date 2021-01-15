@@ -1,7 +1,44 @@
 form {
-	border: thin solid #888;
-  padding: 2rem;
+	padding: 2rem;
   margin-bottom: 2rem;
   display: flex;
   justify-content: center;
+}
+
+.Form-header {
+  text-align: center;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 5px;
+  }
+
+input[type="search"] {
+  margin-right: 15px;
+  width: 300px;
+  padding: 15px;
+  border-top: hidden;
+  border-left: hidden;
+  border-right: hidden;
+  border-bottom: groove lightgrey; 
+}
+
+input[type="search"]:focus {
+  outline: none;
+}
+
+input[type="date"] {
+  padding: 15px;
+  border-top: hidden;
+  border-left: hidden;
+  border-right: hidden;
+  
+}
+
+input[type="date"]:focus {
+  outline: none;
+}
+
+form button {
+  padding: 10px 45px;
+  margin-left: 10px;
 }

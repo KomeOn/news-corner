@@ -1,0 +1,65 @@
+<div className="card">
+        <div className="info-sec">
+          { !data['author'] && <p className="txt">Anonymous</p> }
+          { data['author'] && <p className="txt">{data['author']}</p> }
+          { data['published'] && <Moment format="MM-DD-YYYY" className="txt">{data['published']}</Moment> }
+        </div>
+        <p className="title">{data['title']}</p>
+        <a href={data['thread']['url']}><button>Click me</button></a>
+      </div>
+    );
+
+<span className="icon"><i className={`fa fa-play-circle${!expand ? ' down' : ''}`}></i></span>
+
+/*class RecentCard extends React.Component {  //TODO change the name of function to "NewsCard"
+  render() {
+    const data = this.props;
+    //console.log("App: ",data); //TODO remove this section
+    //TODO restructure the return() function to display it like a card
+    //TODO Remove: UUID, URL 'p' tag
+    //TODO Redesign: Author, Published, Title, Text, 'a' tag
+    //<p className="sub-txt">{data['text']}</p>
+    //{ data['thread']['main_image'] && <img src={data['thread']['main_image']} alt={data['thread']['image_text']}/> }
+    
+    return (
+      <Accordion title={data['title']}>
+        {data['text']}
+      </Accordion>
+    );
+  }
+}*/
+
+
+class RecentContainer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isExpand: 'False'
+    }
+    this.handleExpand = this.handleExpand.bind(this);
+  }
+  handleExpand() {
+    if (this.state.isExpand === 'False') {
+      this.setState({isExpand: 'True'});
+    }
+    else {
+      this.setState({isExpand: 'False'});
+    }
+  }
+  render() {
+    let data = this.props;
+    /*<div className="title-box" onClick={() => setExpand(expand => !expand)}>
+      <span className="title">{titleM && titleM}{!titleM && titlem}</span>
+      <div className="clearfix"></div>
+    </div>
+    {expand && <div className="content">
+    </div>}*/
+    return (
+      <div className="box">
+        <div className="title-box" onClick={this.handleExpand}>
+        { this.state.isExpand == 'True' && <p>Hehe</p>}
+        </div>
+      </div>
+    );
+  }
+}

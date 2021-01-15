@@ -1,0 +1,31 @@
+.folder {
+    padding: 0px 15px 25px;
+    margin: 0 15px;
+    max-height: 420px;
+    position: static;
+}
+
+.folder-header {
+    margin: 15px 0px 15px 0px;
+}
+
+.folder-header-rev {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+
+.folder-title {
+    padding: 15px 45px;
+    font-weight: bold;
+    box-shadow: 10px 1px 10px lightgrey;
+    cursor: pointer;
+}
+
+.folder-body {
+    padding: 15px 15px;
+    border-top: 3px solid #FFFF66;
+    border-bottom: 3px solid #FFFF66;
+    max-height: 354px;
+    overflow-y: auto;
+}

@@ -26,10 +26,10 @@ class NewsFeed extends React.Component {
   render() {
     return (
       <React.Fragment>
-      <SearchFeed onSubmit={this.searchTopic}/>
-      <RecentList />
-      <h1>-------------------Search Result-------------</h1>
-      <CardList topicName={this.state.topicName} searchResult={this.state.searchResult}/>
+        <SearchFeed onSubmit={this.searchTopic}/>
+        <RecentList />
+        <h1>-------------------Search Result-------------</h1>
+        <CardList topicName={this.state.topicName} searchResult={this.state.searchResult}/>
       </React.Fragment>
     );
   }
