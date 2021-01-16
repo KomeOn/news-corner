@@ -5,18 +5,6 @@
     font-family: arial;
     max-height: fit-content;
 }
-  
-.info-sec {
-    display: inline-flex;
-    text-align: center;
-}
-
-.txt {
-    color: grey;
-    font-size: 12px;
-    margin: 0 14px;
-    text-align: center;
-}
 
 .title {
     font-size: 16px;
@@ -37,7 +25,6 @@
  
 img {
     width: 100%;
-    max-height: 200px;
     margin: auto;
 }
 

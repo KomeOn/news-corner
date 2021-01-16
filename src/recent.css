@@ -1,5 +1,5 @@
 .folder {
-    padding: 0px 15px 25px;
+    padding: 0px 15px;
     margin: 0 15px;
     max-height: 420px;
     position: static;
@@ -20,12 +20,19 @@
     font-weight: bold;
     box-shadow: 10px 1px 10px lightgrey;
     cursor: pointer;
+    background-color: lightgrey;
 }
 
 .folder-body {
     padding: 15px 15px;
-    border-top: 3px solid #FFFF66;
-    border-bottom: 3px solid #FFFF66;
+    border-top: 3px solid #808080;
+    border-bottom: 3px solid #808080;
     max-height: 354px;
     overflow-y: auto;
+}
+
+.tags {
+    margin-right: 8px;
+    padding: 0 15px;
+    cursor: pointer;
 }

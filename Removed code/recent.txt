@@ -63,3 +63,77 @@ class RecentContainer extends React.Component {
     );
   }
 }
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+
+<div className="folder">
+      <div className="folder-header-rev" onClick={() => setExpandGames(expandGames => !expandGames)}>
+        <span className="folder-title">
+          Games
+        </span>
+        <div className="clearfix"></div>
+      </div>
+      <div className="folder-body">
+        { expandGames && dataGame.map(news => <RecentCard key={news['article']['uuid']} title={news['article']['title']} text={news['article']['text']} 
+        summary={news['article']['summary']} image={news['article']['media']['main_image']} author={news['article']['author']} 
+        published={news['article']['published']} url={news['article']['url']} categories={news['article']['categories']} 
+        domain={news['site']['domain']} sectionTitle={news['site']['section_title']} />)} 
+      </div>
+    </div>
+
+<div className="folder">
+      <div className="folder-header">
+        <span className="folder-title" onClick={() => setExpandCar(expandCar => !expandCar)}>
+          Car
+        </span>
+        <div className="clearfix"></div>
+      </div>
+      <div className="folder-body">
+        { expandCar && dataCar.map(news => <RecentCard key={news['article']['uuid']} title={news['article']['title']} text={news['article']['text']} 
+        summary={news['article']['summary']} image={news['article']['media']['main_image']} author={news['article']['author']} 
+        published={news['article']['published']} url={news['article']['url']} categories={news['article']['categories']} 
+        domain={news['site']['domain']} sectionTitle={news['site']['section_title']} />)} 
+      </div>
+    </div>
+
+  <div className="folder">
+      <div className="folder-header-rev" onClick={() => setExpandCricket(expandCricket => !expandCricket)}>
+        <span className="folder-title">
+          Cricket
+        </span>
+        <div className="clearfix"></div>
+      </div>
+      <div className="folder-body">
+        { expandCricket && dataCricket.map(news => <RecentCard key={news['article']['uuid']} title={news['article']['title']} text={news['article']['text']} 
+        summary={news['article']['summary']} image={news['article']['media']['main_image']} author={news['article']['author']} 
+        published={news['article']['published']} url={news['article']['url']} categories={news['article']['categories']} 
+        domain={news['site']['domain']} sectionTitle={news['site']['section_title']} />)} 
+      </div>
+    </div>
+
+<div className="folder">
+      <div className="folder-header">
+        <span className="folder-title" onClick={() => setExpandFootball(expandFootball => !expandFootball)}>
+          Football
+        </span>
+        <div className="clearfix"></div>
+      </div>
+      <div className="folder-body">
+        { expandFootball && dataFootball.map(news => <RecentCard key={news['article']['uuid']} title={news['article']['title']} text={news['article']['text']} 
+        summary={news['article']['summary']} image={news['article']['media']['main_image']} author={news['article']['author']} 
+        published={news['article']['published']} url={news['article']['url']} categories={news['article']['categories']} 
+        domain={news['site']['domain']} sectionTitle={news['site']['section_title']} />)} 
+      </div>
+    </div>
+
+
+  /**/
+
+
+<ReadingSection title={article['article']['title']} text={article['article']['text']} 
+        summary={article['article']['summary']} image={article['article']['media']['main_image']} author={article['article']['author']} 
+        published={article['article']['published']} url={article['article']['url']} categories={article['article']['categories']} 
+        domain={article['site']['domain']} sectionTitle={article['site']['section_title']} />

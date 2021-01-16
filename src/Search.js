@@ -20,7 +20,7 @@ class SearchFeed extends React.Component {
       if(this.state.datetime === "") {
         console.log("in without ts")
         console.log(this.state.datetime);
-        resp = await fetch(`https://webhose.io/filterWebContent?token=${Parameter.Token}&site_type=news&size=10&format=${Parameter.Format.Json}&sort=relevancy&q="${this.state.search}" language:${Parameter.Languages.English}`);
+        resp = await fetch(`https://webhose.io/nseFilter?token=${Parameter.Token}&q="${this.state.search}" language:${Parameter.Languages.English} site.type:news`);
       }
       else {
         console.log("in with ts");
@@ -39,10 +39,9 @@ class SearchFeed extends React.Component {
           //resp = await fetch(`https://webhose.io/filterWebContent?token=${Parameter.Token}&site_type=news&size=10&format=${Parameter.Format.Json}&sort=relevancy&q="${this.state.search}" published:>${epooch} language:${Parameter.Languages.English}`);
         }
       }
-      //let data = await resp.json();
-      //console.log("Data: ", data['posts']);
-      //this.setState({search: ''})
-      //this.props.onSubmit(this.state.search, data['posts']);
+      let data = await resp.json();
+      this.setState({search: ''})
+      this.props.onSubmit(this.state.search, data.docs);
     } 
 
     //TODO Customzie the search bar and button
