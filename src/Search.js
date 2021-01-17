@@ -14,7 +14,6 @@ class SearchFeed extends React.Component {
     }
   
     handleSubmit = async (event) => {
-      //TODO  Add date-time filter
       event.preventDefault();
       let resp;
       if(this.state.datetime === "") {

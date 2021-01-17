@@ -11,13 +11,10 @@
 
 <span className="icon"><i className={`fa fa-play-circle${!expand ? ' down' : ''}`}></i></span>
 
-/*class RecentCard extends React.Component {  //TODO change the name of function to "NewsCard"
+/*class RecentCard extends React.Component { 
   render() {
     const data = this.props;
-    //console.log("App: ",data); //TODO remove this section
-    //TODO restructure the return() function to display it like a card
-    //TODO Remove: UUID, URL 'p' tag
-    //TODO Redesign: Author, Published, Title, Text, 'a' tag
+    //console.log("App: ",data); /
     //<p className="sub-txt">{data['text']}</p>
     //{ data['thread']['main_image'] && <img src={data['thread']['main_image']} alt={data['thread']['image_text']}/> }
     
