@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Parameter } from  './RestricedCode.js';
+import { Parameter } from  './restricedCode.js';
 import './card.css';
 import moment from 'moment';
 import {ReactComponent as Loader} from './loading.svg';
