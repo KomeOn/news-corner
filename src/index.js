@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import NewsList from './result';
-import SearchFeed from './search';
-import RecentList from './recent';
+import NewsList from './Result';
+import SearchFeed from './Search';
+import RecentList from './Recent';
 import reportWebVitals from './reportWebVitals';
 
 class NewsFeed extends React.Component {
