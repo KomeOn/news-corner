@@ -18,25 +18,25 @@ export default function RecentList(props) {
     useEffect(() => {
         async function fetchData() {
           setLoading(true);
-          //let respCar = await fetch(`https://webhose.io/nseFilter?token=${Parameter.Token}&q='Car' language:English site.type:news`);
+          let respCar = await fetch(`https://webhose.io/nseFilter?token=${Parameter.Token}&q='Car' language:English site.type:news`);
           let respCovid = await fetch(`https://webhose.io/nseFilter?token=${Parameter.Token}&q='Covid 2019' language:English site.type:news`);
-          //let respCricket = await fetch(`https://webhose.io/nseFilter?token=${Parameter.Token}&q='Cricket' language:English site.type:news`);
-          //let respFootball = await fetch(`https://webhose.io/nseFilter?token=${Parameter.Token}&q='Football' language:English site.type:news`);
-          //let respGame = await fetch(`https://webhose.io/nseFilter?token=${Parameter.Token}&q='Bethesda' language:English site.type:news`);
+          let respCricket = await fetch(`https://webhose.io/nseFilter?token=${Parameter.Token}&q='Cricket' language:English site.type:news`);
+          let respFootball = await fetch(`https://webhose.io/nseFilter?token=${Parameter.Token}&q='Football' language:English site.type:news`);
+          let respGame = await fetch(`https://webhose.io/nseFilter?token=${Parameter.Token}&q='Bethesda' language:English site.type:news`);
         
-          //let dataCar = await respCar.json();
+          let dataCar = await respCar.json();
           let dataCovid = await respCovid.json();
-          //let dataCricket = await respCricket.json();
-          //let dataFootball = await respFootball.json();
-          //let dataGame = await respGame.json();
+          let dataCricket = await respCricket.json();
+          let dataFootball = await respFootball.json();
+          let dataGame = await respGame.json();
           
           setLoading(false);
           
-          //setRecentCars(dataCar.docs);
+          setRecentCars(dataCar.docs);
           setRecentCovid(dataCovid['docs']);
-          //setRecentCricket(dataCricket.docs);
-          //setRecentGames(dataGame['docs']);
-          //setRecentFootball(dataFootball.docs);
+          setRecentCricket(dataCricket.docs);
+          setRecentGames(dataGame['docs']);
+          setRecentFootball(dataFootball.docs);
       };
       fetchData();
     }, []);
@@ -59,6 +59,7 @@ const RecentContainer = ({ dataFootball, dataGame, dataCricket, dataCovid, dataC
   
     return (
     <React.Fragment>
+      
     <div className="folder">
       <div className="folder-header">
         <span className="folder-title" onClick={() => setExpandCovid(expandCovid => !expandCovid)}>
@@ -72,7 +73,68 @@ const RecentContainer = ({ dataFootball, dataGame, dataCricket, dataCovid, dataC
         published={news['article']['published']} url={news['article']['url']} categories={news['article']['categories']} 
         domain={news['site']['domain']} sectionTitle={news['site']['section_title']} />)} 
       </div>
-    </div>    
+    </div>
+
+    <div className="folder">
+      <div className="folder-header-rev" onClick={() => setExpandGames(expandGames => !expandGames)}>
+        <span className="folder-title">
+          Games
+        </span>
+        <div className="clearfix"></div>
+      </div>
+      <div className="folder-body">
+        { expandGames && dataGame.map(news => <RecentCard key={news['article']['uuid']} title={news['article']['title']} text={news['article']['text']} 
+        summary={news['article']['summary']} image={news['article']['media']['main_image']} author={news['article']['author']} 
+        published={news['article']['published']} url={news['article']['url']} categories={news['article']['categories']} 
+        domain={news['site']['domain']} sectionTitle={news['site']['section_title']} />)} 
+      </div>
+    </div>
+
+<div className="folder">
+      <div className="folder-header">
+        <span className="folder-title" onClick={() => setExpandCar(expandCar => !expandCar)}>
+          Car
+        </span>
+        <div className="clearfix"></div>
+      </div>
+      <div className="folder-body">
+        { expandCar && dataCar.map(news => <RecentCard key={news['article']['uuid']} title={news['article']['title']} text={news['article']['text']} 
+        summary={news['article']['summary']} image={news['article']['media']['main_image']} author={news['article']['author']} 
+        published={news['article']['published']} url={news['article']['url']} categories={news['article']['categories']} 
+        domain={news['site']['domain']} sectionTitle={news['site']['section_title']} />)} 
+      </div>
+    </div>
+
+  <div className="folder">
+      <div className="folder-header-rev" onClick={() => setExpandCricket(expandCricket => !expandCricket)}>
+        <span className="folder-title">
+          Cricket
+        </span>
+        <div className="clearfix"></div>
+      </div>
+      <div className="folder-body">
+        { expandCricket && dataCricket.map(news => <RecentCard key={news['article']['uuid']} title={news['article']['title']} text={news['article']['text']} 
+        summary={news['article']['summary']} image={news['article']['media']['main_image']} author={news['article']['author']} 
+        published={news['article']['published']} url={news['article']['url']} categories={news['article']['categories']} 
+        domain={news['site']['domain']} sectionTitle={news['site']['section_title']} />)} 
+      </div>
+    </div>
+
+<div className="folder">
+      <div className="folder-header">
+        <span className="folder-title" onClick={() => setExpandFootball(expandFootball => !expandFootball)}>
+          Football
+        </span>
+        <div className="clearfix"></div>
+      </div>
+      <div className="folder-body">
+        { expandFootball && dataFootball.map(news => <RecentCard key={news['article']['uuid']} title={news['article']['title']} text={news['article']['text']} 
+        summary={news['article']['summary']} image={news['article']['media']['main_image']} author={news['article']['author']} 
+        published={news['article']['published']} url={news['article']['url']} categories={news['article']['categories']} 
+        domain={news['site']['domain']} sectionTitle={news['site']['section_title']} />)} 
+      </div>
+    </div>
+
   </React.Fragment>
   )
 }
@@ -102,7 +164,6 @@ const RecentCard = ({ title, text, summary, image, author, published, url, domai
                     </div>}
       {!expand && <div className="content">
                   <p>{summary}</p>
-                  <button>Show</button>
                   </div>}
       
     </div>

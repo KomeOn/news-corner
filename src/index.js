@@ -29,8 +29,7 @@ class NewsFeed extends React.Component {
       <React.Fragment>
         <SearchFeed onSubmit={this.searchTopic}/>
         <RecentList/>
-        <h1>-------------------Search Result-------------</h1>
-        <NewsList topicName={this.state.topicName} searchResult={this.state.searchResult}/>
+        { this.state.searchResult.length > 0 && <NewsList topicName={this.state.topicName} searchResult={this.state.searchResult}/> }
       </React.Fragment>
     );
   }

@@ -2,6 +2,7 @@
     display: flex;
     overflow-y: scroll;
     overflow-x: hidden;
+    margin-top: 15px;
 }
 
 .column {
@@ -75,5 +76,14 @@
     display: inline-flex;
 }
 
+.reading-section {
+    padding: 10px 15px;
+}
+
+.tags {
+    margin-right: 8px;
+    padding: 0 15px;
+    cursor: pointer;
+}
 
 

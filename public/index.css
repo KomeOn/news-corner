@@ -28,6 +28,13 @@ nav a {
     font-size: 17px;
 }
 
+footer {
+    background-color: black;
+    color: white;
+    padding: 15px 10px;
+    text-align: center;
+}
+
 nav a:hover {
     color: black;
     font-weight: bold;

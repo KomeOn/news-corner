@@ -18,25 +18,17 @@ class SearchFeed extends React.Component {
       event.preventDefault();
       let resp;
       if(this.state.datetime === "") {
-        console.log("in without ts")
-        console.log(this.state.datetime);
         resp = await fetch(`https://webhose.io/nseFilter?token=${Parameter.Token}&q="${this.state.search}" language:${Parameter.Languages.English} site.type:news`);
       }
       else {
-        console.log("in with ts");
-        console.log(this.state.datetime);
         let epooch = moment(this.state.datetime).unix();
         let date = moment(this.state.datetime, 'YYYY-MM-DD').valueOf();
         let dt = moment().valueOf();
-        console.log("d1 ",date," dt ",dt);
-        console.log(date > dt ? "True" : "False");
         if (date > dt) {
           alert("Selected date is more than today");
         }
         else {
-
-          console.log("url: epooch: ",`https://webhose.io/filterWebContent?token=${Parameter.Token}&site_type=news&size=10&format=${Parameter.Format.Json}&sort=relevancy&q="${this.state.search}" published:>${epooch} language:${Parameter.Languages.English}`);
-          //resp = await fetch(`https://webhose.io/filterWebContent?token=${Parameter.Token}&site_type=news&size=10&format=${Parameter.Format.Json}&sort=relevancy&q="${this.state.search}" published:>${epooch} language:${Parameter.Languages.English}`);
+          resp = await fetch(`https://webhose.io/nseFilter?token=${Parameter.Token}&ts=${epooch}&q="${this.state.search}" language:${Parameter.Languages.English} site.type:news`);
         }
       }
       let data = await resp.json();
@@ -44,7 +36,6 @@ class SearchFeed extends React.Component {
       this.props.onSubmit(this.state.search, data.docs);
     } 
 
-    //TODO Customzie the search bar and button
     render() {
       return (
         <div style={{marginTop: "25px", marginBottom: "25px" }}>
