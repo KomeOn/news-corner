@@ -1,17 +1,8 @@
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 100%;
-    /*margin: auto;*/
     font-family: arial;
     max-height: fit-content;
-}
-
-.title {
-    font-size: 16px;
-    font-weight: bold;
-    margin: 10px 0 10px 0;
-    text-align: center;
-    padding: 0 10px;
 }
 
 .sub-txt {
@@ -48,17 +39,6 @@ a {
     opacity: 0.7;
 }
 
-.row {
-    display: flex;
-    overflow-y: scroll;
-    overflow-x: hidden;
-}
-  
-.column {
-    padding: 10px;
-    min-width: 50%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-}
 
 /*-------------------------------------------------------------------------------------------------*/
 /*-------------------------------------------------------------------------------------------------*/
@@ -73,24 +53,3 @@ a {
 /*-------------------------------------------------------------------------------------------------*/
 
 
-.clearfix {
-    clear: both;
-  }
-   
-  .box {
-    width: 100%;
-    }
-  .title-box {
-    cursor: pointer;
-    padding: 15px;
-    }
-  .title {
-    width: calc(100% - 20px);
-  }
-   
-  .content {
-    padding: 15px;
-    border-top: 1px solid #ddd;
-    overflow-y: auto;
-    margin: 15px 0px;    
-}

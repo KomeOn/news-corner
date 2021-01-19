@@ -8,14 +8,14 @@ form {
 .Form-header {
   text-align: center;
   font-weight: bold;
-  font-size: 26px;
-  line-height: 5px;
+  font-size: 1.625em;
+  margin: 0;
   }
 
 input[type="search"] {
-  margin-right: 15px;
-  width: 300px;
-  padding: 15px;
+  margin-right: 0.9375em;
+  width: 18.75em;
+  padding: 0.9375em;
   border-top: hidden;
   border-left: hidden;
   border-right: hidden;
@@ -27,7 +27,7 @@ input[type="search"]:focus {
 }
 
 input[type="date"] {
-  padding: 15px;
+  padding: 0.9375em;
   border-top: hidden;
   border-left: hidden;
   border-right: hidden;
@@ -39,6 +39,25 @@ input[type="date"]:focus {
 }
 
 form button {
-  padding: 10px 45px;
-  margin-left: 10px;
+  padding: 0.625em 2.8125em;
+  margin-left: 0.625em;
 }
+
+@media screen and (max-width: 393px) {
+  .Form-header {
+    font-size: 1.2em;
+  }
+
+  form {
+    padding-left: 0.9375em;
+    padding-right: 0.9375em;
+  }
+
+  input[type="search"] {
+    width: 12.5em;
+  }
+
+  form button {
+    padding: 0.5em 2.2125em;
+  }
+} 

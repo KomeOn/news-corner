@@ -2,52 +2,52 @@
     display: flex;
     overflow-y: scroll;
     overflow-x: hidden;
-    margin-top: 15px;
+    margin-top: 0.9375em;
 }
 
-.column {
-    padding: 10px 15px;
-    margin: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+.side-news {
+    padding: 0.625em 0.9375em;
+    margin: 0.625em;
+    box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.2);
 }
   
 .column-4 {
-    padding: 10px;
+    padding: 0.625em;
     min-width: 40%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.2);
 }
 
 .column-6 {
-    padding: 10px;
+    padding: 0.625em;
     min-width: 60%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.2);
 }
 
 .title {
     text-align: center;
-    margin: 10px 0px;
-    padding: 0 5px;
+    margin: 0.625em 0;
+    padding: 0 0.3125em;
 }
 
 .txt {
     color: black;
-    font-size: 12px;
-    margin: 0px 14px;
+    font-size: 0.75em;
+    margin: 0 0.875em;
     text-align: center;
 }
 
 .read-txt {
     color: black;
-    font-size: 16px;
+    font-size: 1em;
     font-size: bold;
-    margin: 10px 14px;
+    margin: 0.625em 0.875em;
     text-align: center;
 
 }
 
 .image {
     width: 100%;
-    border: 5px solid black;
+    border: 0.3125em solid black;
 }
 
 .link {
@@ -58,14 +58,14 @@
 .button {
     border: none;
     outline: 0;
-    padding: 12px;
-    margin-top: 10px;
+    padding: 0.75em;
+    margin-top: 0.625em;
     color: white;
     background-color: #000;
     text-align: center;
     cursor: pointer;
     width: 100%;
-    font-size: 18px;
+    font-size: 1.125em;
 }
 
 .button:hover {
@@ -77,13 +77,20 @@
 }
 
 .reading-section {
-    padding: 10px 15px;
+    padding: 0.625em 0.9375em;
 }
 
 .tags {
-    margin-right: 8px;
-    padding: 0 15px;
+    margin-right: 0.5em;
+    padding: 0 0.9375em;
     cursor: pointer;
+    font-weight: bold;
 }
 
+@media screen and (max-width: 393px) {
+    .tags {
+        padding: 0;
+        font-size: 0.85em;
+    }
+}
 

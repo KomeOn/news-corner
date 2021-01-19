@@ -1,12 +1,12 @@
 .folder {
-    padding: 0px 15px;
-    margin: 0 15px;
-    max-height: 420px;
+    padding: 0 0.9375em;
+    margin: 0 0.9375em;
+    max-height: 26.25em;
     position: static;
 }
 
 .folder-header {
-    margin: 15px 0px 15px 0px;
+    margin: 0.9375em 0 0.9375em 0;
 }
 
 .folder-header-rev {
@@ -16,23 +16,105 @@
 
 
 .folder-title {
-    padding: 15px 45px;
+    padding: 0.9375em 2.8125em;
     font-weight: bold;
-    box-shadow: 10px 1px 10px lightgrey;
+    box-shadow: 0.625em 0.0625em 0.625em lightgrey;
     cursor: pointer;
     background-color: lightgrey;
 }
 
 .folder-body {
-    padding: 15px 15px;
-    border-top: 3px solid #808080;
-    border-bottom: 3px solid #808080;
-    max-height: 354px;
+    padding: 0.9375em 0.9375em;
+    border-top: 0.1875em solid #808080;
+    border-bottom: 0.1875em solid #808080;
+    max-height: 22.125em;
     overflow-y: auto;
 }
 
-.tags {
-    margin-right: 8px;
-    padding: 0 15px;
+.recent-tags {
+    margin-right: 0.5em;
+    padding: 0 0.9375em;
     cursor: pointer;
+    font-weight: bold;
+}
+
+.clearfix {
+    clear: both;
+}
+   
+.box {
+    width: 100%;
+}
+
+.title-box {
+    cursor: pointer;
+    padding: 0.9375em;
+}
+.title {
+    font-size: 1em;
+    font-weight: bold;
+    margin: 0.625em 0 0.625em 0;
+    text-align: center;
+    padding: 0 0.625em;
+    width: calc(100% - 1.25em);
+}
+   
+.content {
+    padding: 0.9375em;
+    border-top: 0.0625em solid #ddd;
+    overflow-y: auto;
+    margin: 0.9375em 0;    
+}
+
+.fas {
+    margin: 0.625em;
+}
+
+.row {
+    display: flex;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+  
+.column {
+    padding: 0.625em;
+    min-width: 50%;
+    box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.2);
+}
+
+
+@media screen and (max-width: 393px) {
+    .folder {
+        margin: 0 0;
+    }
+
+    .folder-header {
+        margin: 0.625em 0 0.625em 0;
+    }
+
+    .folder-title {
+        padding: 0.625em 1.25em;
+    }
+
+    .title-box {
+        padding: 0.625em;
+    }
+
+    .title {
+        padding: 0;
+        width: 100%;
+    }
+
+    .content {
+        font-size: 0.875em;
+    }
+    
+    .row {
+        display: block;
+    }
+
+    .recent-tags {
+        padding: 0;
+        font-size: 0.85em;
+    }
 }

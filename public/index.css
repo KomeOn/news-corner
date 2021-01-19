@@ -9,14 +9,15 @@ nav {
     top: 0;
     display: flex;
     align-items: center;
-    padding-left: 483.695px;
+    padding-left: 30.2309375em;
+    color: white;
 }
 
 nav #bigg {
     display: inline-flex;
     align-items: center;
     align-self: center;
-    font-size: 32px;
+    font-size: 2em;
 }
 
 nav a {
@@ -53,7 +54,7 @@ nav a.active {
 
 .left-aside a {
     padding: 0;
-    padding-left: 15px;
+    padding-left: 0.9375em;
 }
 
 .App-logo {
@@ -75,6 +76,17 @@ nav a.active {
       transform: rotate(360deg);
     }
 }
+
+@media screen and (max-width: 393px) {
+    nav {
+        display: block;
+        padding-left: 0px;
+    }
+
+    .left-aside {
+        padding: 0px;
+    }
+  } 
   
 
   
