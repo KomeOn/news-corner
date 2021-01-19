@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import NewsList from './result';
-import SearchFeed from './Search';
+import SearchFeed from './search';
 import RecentList from './recent';
 import reportWebVitals from './reportWebVitals';
 

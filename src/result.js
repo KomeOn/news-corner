@@ -63,7 +63,7 @@ class NewsCard extends React.Component {
     const data = this.props;
     
     return (
-      <div className="column">
+      <div className="side-news">
         { data['article']['media']['main_image'] && <img className="image" src={data['article']['media']['main_image']} alt="display text"/> }
         <div className="info-sec">
           { !data['article']['author'] && <p className="txt">Anonymous</p> }
@@ -78,7 +78,7 @@ class NewsCard extends React.Component {
           <a className="link" href={data['article']['url']}>  {"<<"}   Check the original article   {">>"}  </a>
         </div>}
         <br></br>
-        <button className="button" onClick={()=> {this.props.onClick(this.props)}}>Read in the reading section</button>
+        <button className="button" onClick={()=> {this.props.onClick(this.props)}}><a href="#reading" style={{color: 'white'}}>Read in the reading section</a></button>
       </div>
     );
   }
@@ -87,7 +87,7 @@ class NewsCard extends React.Component {
 function ReadingSection(props) {
   
   return (
-    <div className="reading-section">
+    <div id="reading" className="reading-section">
         <h1>{props.title}</h1>
         { props.image && <img src={props.image['main_image']} alt=""/> } 
         <div className="info-sec">
