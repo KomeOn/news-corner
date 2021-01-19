@@ -1,0 +1,8 @@
+.loader {
+    padding: 10% 40%;
+}
+@media screen and (max-width: 393px) {
+    .loader {
+        padding: 30% 25%;
+    }
+}

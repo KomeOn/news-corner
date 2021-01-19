@@ -1,8 +1,9 @@
 import React from 'react';
+import './loader.css';
 
 export default function Loader(props) {
     return (
-        <div style={{padding: "10% 40%"}}>
+        <div className="loader">
             <svg width="200" height="200" viewBox="0 0 120 30" xmlns="http://www.w3.org/2000/svg" fill="#61DAFB">
                 <circle cx="15" cy="15" r="15">
                     <animate attributeName="r" from="15" to="15"
