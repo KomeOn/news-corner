@@ -1,7 +1,7 @@
 .loader {
     padding: 10% 40%;
 }
-@media screen and (max-width: 393px) {
+@media screen and (min-width: 360px) and (max-width: 760px) {
     .loader {
         padding: 30% 25%;
     }

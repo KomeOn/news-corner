@@ -87,7 +87,7 @@
     font-weight: bold;
 }
 
-@media screen and (max-width: 393px) {
+@media screen and (min-width: 360px) and (max-width: 760px) {
     .tags {
         padding: 0;
         font-size: 0.85em;
