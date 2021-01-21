@@ -22,7 +22,7 @@
 
     Covid 2019, Games, Car, Cricket, Football are containers that store the news related to these topics.
 
-![Homepage](pictures\Homepage2.png)
+![Homepage](https://github.com/KomeOn/news-corner/blob/e1785ebc51d6de45b839cb75b685463b20197d6a/pictures/Homepage2.png)
 
 ### Footer
 
@@ -31,12 +31,12 @@
 
 ### 2. Recent Results
 
-![Recent](pictures\Recent1.png)
+![Recent](https://github.com/KomeOn/news-corner/blob/e1785ebc51d6de45b839cb75b685463b20197d6a/pictures/Recent1.png)
 
 ### Container topics
 
     As stated above each topic is a container that contains all the news related to that specific topic or contains some keyword that matches the topic.
 
-![Recent](pictures\Recent2.png)
+![Recent](phttps://github.com/KomeOn/news-corner/blob/e1785ebc51d6de45b839cb75b685463b20197d6a/pictures/Recent2.png)
 
-![Recent](pictures\Recent3.png)
+![Recent](https://github.com/KomeOn/news-corner/blob/e1785ebc51d6de45b839cb75b685463b20197d6a/pictures/Recent3.png)
