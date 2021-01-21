@@ -10,7 +10,7 @@
 
 ### 1. Homepage
 
-![Homepage](pictures\Homepage1.png)
+![Homepage](https://github.com/KomeOn/news-corner/blob/e1785ebc51d6de45b839cb75b685463b20197d6a/pictures/Homepage1.png)
 
 ### Header
 
