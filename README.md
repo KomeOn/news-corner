@@ -78,26 +78,28 @@
     In the news card, 
         1. The first is the image which is present in the article.
         2. The second line contains the name of the author and published time.
-        3. The third line contains a "Read More" button when clicked will further expand (Explaination in the next block).
-        4. The fourth line contains a "Read in the reading section" button when clicked will display information on the right side 
-        (Explaination in the next block).
+        3. The third line contains a "Read More" button when clicked will further expand (Explaination in the 
+        next block).
+        4. The fourth line contains a "Read in the reading section" button when clicked will display information
+         on the right side (Explaination in the next block).
 
 ![Search Result without using datetime filter](https://github.com/KomeOn/news-corner/blob/e1785ebc51d6de45b839cb75b685463b20197d6a/pictures/SearchResult2.png)
 
-    Clicking the "Read More" button expands and display the hidden block containing summary and a link to the original article.
+    Clicking the "Read More" button expands and display the hidden block containing summary and a link to 
+    the original article.
 
 ![Search Result without using datetime filter](https://github.com/KomeOn/news-corner/blob/e1785ebc51d6de45b839cb75b685463b20197d6a/pictures/SearchResult3.png)
 
-    Clicking the "Read in the reading section" button will display information on the right side of the result section
-    containing all the information like,
+    Clicking the "Read in the reading section" button will display information on the right side of the result 
+    section containing all the information like,
         title, image, author, tags, text and social media stats. 
 
 ### 3.2 Search Results with using datetime filter
 
 ![Search Results with using datetime filter](https://github.com/KomeOn/news-corner/blob/e1785ebc51d6de45b839cb75b685463b20197d6a/pictures/Search2.png)
 
-    In the Search bar, required query will get inserted, the date around which the article is needed needs to be and the 
-    Search button will get clicked. (Example Date: 14/01/2021)
+    In the Search bar, required query will get inserted, the date around which the article is needed needs to 
+    be and the Search button will get clicked. (Example Date: 14/01/2021)
 
 ![Search Results with using datetime filter](https://github.com/KomeOn/news-corner/blob/e1785ebc51d6de45b839cb75b685463b20197d6a/pictures/SearchResult4.png)
 
@@ -105,12 +107,14 @@
     In the news card, 
         1. The first is the image which is present in the article.
         2. The second line contains the name of the author and published time.
-        3. The third line contains a "Read More" button when clicked will further expand (Explaination in the next block).
-        4. The fourth line contains a "Read in the reading section" button when clicked will display information on the right side 
-        (Explaination in the next block). (Example All the articles displayed are published after "14/01/2021")
+        3. The third line contains a "Read More" button when clicked will further expand (Explaination 
+        in the next block).
+        4. The fourth line contains a "Read in the reading section" button when clicked will display information
+         on the right side (Explaination in the next block). 
+         (Example All the articles displayed are published after "14/01/2021")
 
 ![Search Results with using datetime filter](https://github.com/KomeOn/news-corner/blob/e1785ebc51d6de45b839cb75b685463b20197d6a/pictures/SearchResult5.png)
 
-    Clicking the "Read in the reading section" button will display information on the right side of the result section
-    containing all the information like,
-        title, image, author, tags, text and social media stats. 
+    Clicking the "Read in the reading section" button will display information on the right side of the result 
+    section containing all the information like,
+        title, image, author, tags, text and social media stats.
