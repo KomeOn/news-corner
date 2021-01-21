@@ -27,7 +27,8 @@
 ### Footer
 
     Made with React signifies that it is made from React library.
-    Last line defines the creator (who creates the website), the time period (around when it is made) and all rights (all the IPR).
+    Last line defines the creator (who creates the website), the time period (around when it is made) and 
+    all rights (all the IPR).
 
 ### 2. Recent Results
 
@@ -35,8 +36,28 @@
 
 ### Container topics
 
-    As stated above each topic is a container that contains all the news related to that specific topic or contains some keyword that matches the topic.
+    As stated above each topic is a container that contains all the news related to that specific topic or 
+    contains some keyword that matches the topic.
+    
+    When clicked on the topc title it will displays all the news including their title and summary.
 
-![Recent](phttps://github.com/KomeOn/news-corner/blob/e1785ebc51d6de45b839cb75b685463b20197d6a/pictures/Recent2.png)
+![Recent](https://github.com/KomeOn/news-corner/blob/e1785ebc51d6de45b839cb75b685463b20197d6a/pictures/Recent2.png)
+
+### News title
+
+    By default news box will show news title and summary.
+
+    When clicked on the news title it will open original article in a new tab and will show news text in
+    place of the summary.
 
 ![Recent](https://github.com/KomeOn/news-corner/blob/e1785ebc51d6de45b839cb75b685463b20197d6a/pictures/Recent3.png)
+
+    In the news text body, 
+        1. First line shows the author of the article (if no author name is found; by default it will 
+        shows "Anonymous"), published time of the article with respect to current time, and 
+        the domain name aka the website name from which the article has been taken.
+
+        2. Second line shows all the tags which are present in the article.
+
+        3. Afterwards, the second line it shows all the news text.
+
