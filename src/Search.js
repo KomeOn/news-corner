@@ -50,10 +50,11 @@ class SearchFeed extends React.Component {
         <div style={{marginTop: "1.625em", marginBottom: "1.625em" }}>
           <p className="Form-header">Search any topic, blogs, news and discussions here....</p>
           <form onSubmit={this.handleSubmit}>
-            <input type="search" value={this.state.search} onChange={event => this.setState({search: event.target.value})} 
+            <input type="search" value={this.state.search} 
+            onChange={event => this.setState({search: event.target.value})} 
             placeholder="Enter news by topic, name...." />
             <input type="datetime-local" min="1970-01-01" name="datetime" value={this.state.datetime} 
-            onChange={event => this.setState({datetime: event.target.value})} />
+            onChange={event => this.setState({datetime: event.target.value})} placeholder="Published Till Date" />
             { !this.state.running && <button>Search</button>}  
             { this.state.running && <button disabled>Searching...</button>}
           </form>

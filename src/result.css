@@ -39,7 +39,7 @@
 .read-txt {
     color: black;
     font-size: 1em;
-    font-size: bold;
+    font-weight: bold;
     margin: 0.625em 0.875em;
     text-align: center;
 
@@ -87,10 +87,33 @@
     font-weight: bold;
 }
 
+.expansion {
+    padding: 0px 10px 0px 10px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.expansion p {
+    margin: 0;
+}
+
 @media screen and (min-width: 360px) and (max-width: 760px) {
     .tags {
         padding: 0;
         font-size: 0.85em;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .row {
+        display: block;
+    }
+
+    .link {
+        display: block;
+        text-align: left;
     }
 }
 

@@ -1,8 +1,14 @@
 .loader {
-    padding: 10% 40%;
+    padding: 10% 32%;
 }
 @media screen and (min-width: 360px) and (max-width: 760px) {
     .loader {
-        padding: 30% 25%;
+        padding: 30% 18%;
+        text-align: center;
+    }
+
+    .loader svg {
+        width: 200.000000pt;
+        height: 200.000000pt;
     }
 }

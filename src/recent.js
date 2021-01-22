@@ -77,7 +77,7 @@ const RecentContainer = ({ dataFootball, dataGame, dataCricket, dataCovid, dataC
 
     <div className="folder">
       <div className="folder-header-rev" onClick={() => setExpandGames(expandGames => !expandGames)}>
-        <span className="folder-title">
+        <span className="folder-title-rev">
           Games
         </span>
         <div className="clearfix"></div>
@@ -90,7 +90,7 @@ const RecentContainer = ({ dataFootball, dataGame, dataCricket, dataCovid, dataC
       </div>
     </div>
 
-<div className="folder">
+  <div className="folder">
       <div className="folder-header">
         <span className="folder-title" onClick={() => setExpandCar(expandCar => !expandCar)}>
           Car
@@ -107,7 +107,7 @@ const RecentContainer = ({ dataFootball, dataGame, dataCricket, dataCovid, dataC
 
   <div className="folder">
       <div className="folder-header-rev" onClick={() => setExpandCricket(expandCricket => !expandCricket)}>
-        <span className="folder-title">
+        <span className="folder-title-rev">
           Cricket
         </span>
         <div className="clearfix"></div>
@@ -120,7 +120,7 @@ const RecentContainer = ({ dataFootball, dataGame, dataCricket, dataCovid, dataC
       </div>
     </div>
 
-<div className="folder">
+  <div className="folder">
       <div className="folder-header">
         <span className="folder-title" onClick={() => setExpandFootball(expandFootball => !expandFootball)}>
           Football
@@ -151,18 +151,18 @@ const RecentCard = ({ title, text, summary, image, author, published, url, domai
       </div>
       {expand && <div className="content row"> 
                     {image && <div className="column">
-                       <img src={image} alt="Displaying text" />
+                       <img src={image} alt={title} />
                       </div>}  
                     <div className="column">
                       <p>
-                        {author && <span>{author}</span>}{!author && <span>Anonymous</span>}  |  <span>{moment(published).fromNow()} </span>  |  { domain && <a href={"https://"+domain} target="_blank" rel="noreferrer" style={{color: "black"}}>{sectionTitle}</a>}
+                        {author && <span className="author">{author}</span>}{!author && <span className="author">Anonymous</span>}  |  <span className="published">{moment(published).fromNow()} </span>  |  { domain && <a href={"https://"+domain} target="_blank" rel="noreferrer">{sectionTitle}</a>}
                       </p>
                       <div> {categories.map(category => (<span className="recent-tags"><i class="fas fa-tag"></i> {category['name']}</span>))} </div>
-                      <p>{text}</p>
+                      <p className="info">{text}</p>
                       </div>    
                     </div>}
       {!expand && <div className="content">
-                  <p>{summary}</p>
+                  <p className="info">{summary}</p>
                   <p style={{margin: '0'}}><a href={url} target="_blank" rel="noreferrer" style={{color: "black"}}> Checkout the original article</a></p>
                   </div>}
       

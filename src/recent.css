@@ -15,12 +15,23 @@
 }
 
 
-.folder-title {
+.folder-title, .folder-title-rev {
     padding: 0.9375em 2.8125em;
     font-weight: bold;
     box-shadow: 0.625em 0.0625em 0.625em lightgrey;
     cursor: pointer;
     background-color: lightgrey;
+    font-size: large;
+    font-family: 'Oswald', sans-serif;
+    background-color: darkgrey;
+}
+
+.folder-title {
+    border-radius: 204px 0px 204px;
+}
+
+.folder-title-rev {
+    border-radius: 0px 204px 0px;
 }
 
 .folder-body {
@@ -36,6 +47,7 @@
     padding: 0 0.9375em;
     cursor: pointer;
     font-weight: bold;
+    font-family: 'Oswald', sans-serif;
 }
 
 .clearfix {
@@ -57,6 +69,7 @@
     text-align: center;
     padding: 0 0.625em;
     width: calc(100% - 1.25em);
+    font-family: 'Oswald', sans-serif;
 }
    
 .content {
@@ -75,13 +88,33 @@
     overflow-y: auto;
     overflow-x: hidden;
 }
-  
+ 
 .column {
     padding: 0.625em;
     min-width: 50%;
     box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.2);
 }
 
+.author {
+    font-family: 'Signika Negative', sans-serif;
+}
+
+.published {
+    font-family: 'Arvo', serif;
+}
+
+a {
+    font-family: 'Oswald', sans-serif;
+    color: black;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.info {
+    font-family: 'Arvo', serif; 
+}
 
 @media screen and (min-width: 360px) and (max-width: 760px) {
     .folder {
@@ -92,7 +125,7 @@
         margin: 0.625em 0 0.625em 0;
     }
 
-    .folder-title {
+    .folder-title, .folder-title-rev {
         padding: 0.625em 1.25em;
     }
 

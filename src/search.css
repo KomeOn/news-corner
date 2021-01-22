@@ -10,7 +10,8 @@ form {
   font-weight: bold;
   font-size: 1.625em;
   margin: 0;
-  }
+  font-family: 'Oswald', sans-serif;
+}
 
 input[type="search"] {
   margin-right: 0.9375em;
@@ -26,7 +27,7 @@ input[type="search"]:focus {
   outline: none;
 }
 
-input[type="date"] {
+input[type="datetime-local"] {
   padding: 0.9375em;
   border-top: hidden;
   border-left: hidden;
@@ -34,13 +35,20 @@ input[type="date"] {
   
 }
 
-input[type="date"]:focus {
+input[type="datetime-local"]:focus {
   outline: none;
 }
 
 form button {
   padding: 0.625em 2.8125em;
   margin-left: 0.625em;
+  border-radius: 204px 204px 0px;
+  background-color: lightblue;
+}
+
+form button:hover {
+  background-color: #48AAAD;
+  font-weight: bolder;
 }
 
 @media screen and (min-width: 360px) and (max-width: 760px) {

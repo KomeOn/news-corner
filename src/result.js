@@ -71,7 +71,9 @@ class NewsCard extends React.Component {
           { data['article']['published'] && <Moment format="DD-MM-YYYY" className="txt">{data['article']['published']}</Moment> }
         </div>
         <p className="title">{data['article']['title']}</p>
-        <button onClick={this.handleExpansion}>Read More....</button>
+        <button className="expansion" onClick={this.handleExpansion}>
+          <p>Read More....</p>
+        </button>
         { this.state.expansion &&  
         <div>
           <p><small>{data['article']['summary']}</small></p>
@@ -91,13 +93,13 @@ function ReadingSection(props) {
         <h1>{props.title}</h1>
         { props.image && <img src={props.image['main_image']} alt=""/> } 
         <div className="info-sec">
-          { props.author !== undefined && <p className="read-txt">Anonymous</p>}
+          { !props.author && props.author !== undefined  && <p className="read-txt">Anonymous</p>}
           { props.author && <p className="read-txt">{props.author}</p>}
           { props.published && <Moment format="DD-MM-YYYY" className="read-txt">{props.published}</Moment> }
         </div>
         <br></br>
         { props.domain && <a className="link read-txt" href={"https://"+props.domain} target="_blank" rel="noreferrer">{props.sectionTitle} ({props.name})</a>}
-        { props.url &&<a className="link read-txt" href={"https://"+props.url} target="_blank" rel="noreferrer">Link to the original article...</a>}
+        { props.url &&<a className="link read-txt" href={props.url} target="_blank" rel="noreferrer">Link to the original article...</a>}
         <p>{props.text}</p>
         { props.categories && <div style={{marginTop: "10px"}}> <h3>Tags:</h3> {props.categories.map(category => (<span className="tags"><i class="fas fa-tag"></i> {category['name']}</span>))} </div>}
         { props.social && 
