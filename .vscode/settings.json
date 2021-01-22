@@ -5,8 +5,8 @@
                 "**/README.md"
             ],
             "config": {
-                "audience": "general",
-                "dialect": "american",
+                "audience": "knowledgeable",
+                "dialect": "australian",
                 "domain": "general",
                 "emotions": [
                     "respectful",
@@ -18,5 +18,10 @@
                 ]
             }
         }
+    ],
+    "grammarly.ignore": [
+        "**/node_modules/**/*",
+        "**/package.json",
+        "**/package-lock.json",
     ]
 }

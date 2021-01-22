@@ -140,14 +140,13 @@ const RecentContainer = ({ dataFootball, dataGame, dataCricket, dataCovid, dataC
 }
 
 
-
 const RecentCard = ({ title, text, summary, image, author, published, url, domain, categories, sectionTitle, isExpand = false }) => {
   const [expand, setExpand] = useState(isExpand);
 
   return (
     <div className="box">
       <div className="title-box" onClick={() => setExpand(expand => !expand)}>
-        <span className="title"><i class="fas fa-dot-circle"></i> <a href={url} target="_blank" rel="noreferrer" style={{color: "black"}}>{title}</a></span>
+        <span className="title"><i class="fas fa-dot-circle"></i> {title}</span>
         <div className="clearfix"></div>
       </div>
       {expand && <div className="content row"> 
@@ -164,6 +163,7 @@ const RecentCard = ({ title, text, summary, image, author, published, url, domai
                     </div>}
       {!expand && <div className="content">
                   <p>{summary}</p>
+                  <p style={{margin: '0'}}><a href={url} target="_blank" rel="noreferrer" style={{color: "black"}}> Checkout the original article</a></p>
                   </div>}
       
     </div>

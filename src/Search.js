@@ -25,17 +25,18 @@ class SearchFeed extends React.Component {
       let resp;
       this.handleAction();
       if(this.state.datetime === "") {
-        resp = await fetch(`https://webhose.io/nseFilter?token=${Parameter.Token}&q=${this.state.search} language:${Parameter.Languages.English} site.type:news`);
+        resp = await fetch(`https://webhose.io/nseFilter?token=${Parameter.Token}&q=${this.state.search} language%3A${Parameter.Languages.English} site.type%3Anews`);
       }
       else {
         let epooch = moment(this.state.datetime).unix();
         let date = moment(this.state.datetime, 'YYYY-MM-DD').valueOf();
         let dt = moment().valueOf();
+        console.log("dt: ",dt," & date: ",date)
         if (date > dt) {
           alert("Selected date is more than today");
         }
         else {
-          resp = await fetch(`https://webhose.io/nseFilter?token=${Parameter.Token}&ts=${epooch}&q=${this.state.search} language:${Parameter.Languages.English} site.type:news`);
+          resp = await fetch(`https://webhose.io/nseFilter?token=${Parameter.Token}&ts=${epooch}&q=${this.state.search} language%3A${Parameter.Languages.English} site.type%3Anews`);
         }
       }
       let data = await resp.json();
@@ -51,7 +52,7 @@ class SearchFeed extends React.Component {
           <form onSubmit={this.handleSubmit}>
             <input type="search" value={this.state.search} onChange={event => this.setState({search: event.target.value})} 
             placeholder="Enter news by topic, name...." />
-            <input type="date" min="1970-01-01" name="datetime" value={this.state.datetime} 
+            <input type="datetime-local" min="1970-01-01" name="datetime" value={this.state.datetime} 
             onChange={event => this.setState({datetime: event.target.value})} />
             { !this.state.running && <button>Search</button>}  
             { this.state.running && <button disabled>Searching...</button>}

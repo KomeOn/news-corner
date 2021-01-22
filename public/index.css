@@ -9,8 +9,8 @@ nav {
     top: 0;
     display: flex;
     align-items: center;
-    padding-left: 30.2309375em;
     color: white;
+    justify-content: flex-end;
 }
 
 nav #bigg {
@@ -49,7 +49,10 @@ nav a.active {
 
 .left-aside {
     display: flex;
-    padding-left: 36%;
+    padding-left: 25vw;
+    margin-right: 1vw;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
 }
 
 .left-aside a {
