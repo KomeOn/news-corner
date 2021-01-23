@@ -36,7 +36,7 @@ class NewsContainer extends React.Component {
           {data.map(news => <NewsCard topicName={data.topicName} onClick={this.readingView} key={news['article']['uuid']} {...news} />)}
         </div>
         <div className="column-6">
-        <ReadingSection title={article['title']} text={article['text']} summary={article['summary']} image={article['media']} author={article['author']} 
+        <ReadingSection key={article['uuid']} title={article['title']} text={article['text']} summary={article['summary']} image={article['media']} author={article['author']} 
         published={article['published']} url={article['url']} categories={article['categories']} social={article['social']}
         domain={site['domain']} sectionTitle={site['section_title']} name={site['name']}  />
         </div>
@@ -101,15 +101,15 @@ function ReadingSection(props) {
         { props.domain && <a className="link read-txt" href={"https://"+props.domain} target="_blank" rel="noreferrer">{props.sectionTitle} ({props.name})</a>}
         { props.url &&<a className="link read-txt" href={props.url} target="_blank" rel="noreferrer">Link to the original article...</a>}
         <p>{props.text}</p>
-        { props.categories && <div style={{marginTop: "10px"}}> <h3>Tags:</h3> {props.categories.map(category => (<span className="tags"><i class="fas fa-tag"></i> {category['name']}</span>))} </div>}
+        { props.categories && <div style={{marginTop: "10px"}}> <h3>Tags:</h3> {props.categories.map(category => (<span className="tags"><i className="fas fa-tag"></i> {category['name']}</span>))} </div>}
         { props.social && 
         <div>
           <h3>Social:</h3>
-          <p>
-            Comments: {props.social['facebook']['comments']} <i class="far fa-comments"></i> <hr></hr>
-            Likes: {props.social['facebook']['likes']} <i class="far fa-thumbs-up"></i> <hr></hr>
-            Shares: {props.social['facebook']['shares']} <i class="far fa-share-square"></i> <hr></hr>
-          </p> 
+          <div>
+            Comments: {props.social['facebook']['comments']} <i className="far fa-comments"></i> <hr ></hr>
+            Likes: {props.social['facebook']['likes']} <i className="far fa-thumbs-up"></i> <hr></hr>
+            Shares: {props.social['facebook']['shares']} <i className="far fa-share-square"></i> <hr></hr>
+          </div> 
         </div>}
         </div>
 

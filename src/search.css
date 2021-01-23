@@ -28,7 +28,7 @@ input[type="search"]:focus {
 }
 
 input[type="datetime-local"] {
-  padding: 0.9375em;
+  padding: 0.4375em;
   border-top: hidden;
   border-left: hidden;
   border-right: hidden;
@@ -66,6 +66,7 @@ form button:hover {
 
   input[type="search"] {
     width: 23.5em;
+    margin-bottom: 0.375em;
   }
 
   input[type="datetime-local"]{
@@ -73,7 +74,7 @@ form button:hover {
   }
 
   form button {
-    padding: 0.5em 2.2125em;
+    padding: 0.5em 1.2125em;
   }
 } 
 

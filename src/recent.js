@@ -146,7 +146,7 @@ const RecentCard = ({ title, text, summary, image, author, published, url, domai
   return (
     <div className="box">
       <div className="title-box" onClick={() => setExpand(expand => !expand)}>
-        <span className="title"><i class="fas fa-dot-circle"></i> {title}</span>
+        <span className="title"><i className="fas fa-dot-circle"></i> {title}</span>
         <div className="clearfix"></div>
       </div>
       {expand && <div className="content row"> 
@@ -157,7 +157,7 @@ const RecentCard = ({ title, text, summary, image, author, published, url, domai
                       <p>
                         {author && <span className="author">{author}</span>}{!author && <span className="author">Anonymous</span>}  |  <span className="published">{moment(published).fromNow()} </span>  |  { domain && <a href={"https://"+domain} target="_blank" rel="noreferrer">{sectionTitle}</a>}
                       </p>
-                      <div> {categories.map(category => (<span className="recent-tags"><i class="fas fa-tag"></i> {category['name']}</span>))} </div>
+                      <div> {categories.map(category => (<span className="recent-tags"><i className="fas fa-tag"></i> {category['name']}</span>))} </div>
                       <p className="info">{text}</p>
                       </div>    
                     </div>}

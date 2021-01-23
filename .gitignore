@@ -25,3 +25,4 @@ yarn-error.log*
 #by-user
 .eslintcache
 Removed code
+.vscode
