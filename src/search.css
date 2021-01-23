@@ -51,7 +51,33 @@ form button:hover {
   font-weight: bolder;
 }
 
-@media screen and (min-width: 360px) and (max-width: 760px) {
+@media screen and (min-width: 360px) and (max-width: 759px) {
+  form {
+    padding-left: 0.9375em;
+    padding-right: 0.9375em;
+    display: block;
+  }
+  
+  .Form-header {
+    font-size: 1.2em;
+    padding: 0 0.6875em;
+  }
+
+
+  input[type="search"] {
+    width: 23.5em;
+  }
+
+  input[type="datetime-local"]{
+    width: 14.5em;
+  }
+
+  form button {
+    padding: 0.5em 2.2125em;
+  }
+} 
+
+@media screen and (min-width: 760px) {
   .Form-header {
     font-size: 1.2em;
   }
