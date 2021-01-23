@@ -15,11 +15,6 @@ const format = {
     Excel: 'excel'
 }
 
-const highLight = {
-    True: 'true',
-    False: 'false'
-}
-
 const languages = {
     default: 'none',
     English: 'english',
@@ -28,10 +23,6 @@ const languages = {
     German: 'german'
 }
 
-const author = "";
-
-const published = "";
-
 const siteType = {
     Any: 'any',
     News: 'news',
@@ -39,29 +30,10 @@ const siteType = {
     Discussions: 'discussions'
 } 
 
-const threadCountry = {
-    India: 'IN',
-    UnitedKingdom: 'GB',
-    UnitedStatesofAmerica: 'US',
-    Australia: 'AU'
-}
-
-const urls = {
-    Default: "https://webhose.io/filterWebContent?token=a831f6da-e17b-4615-b33c-34a1d50b726c&size=10&sort=relevancy&q=",
-    Format: "https://webhose.io/filterWebContent?token=a831f6da-e17b-4615-b33c-34a1d50b726c&size=10&format=json&sort=relevancy&q=",
-    ForLangEng: "https://webhose.io/filterWebContent?token=a831f6da-e17b-4615-b33c-34a1d50b726c&size=10&format=json&sort=relevancy&q=",
-    ForLangHind: "https://webhose.io/filterWebContent?token=a831f6da-e17b-4615-b33c-34a1d50b726c&size=10&format=json&sort=relevancy&q=",
-    ForLangEngNew: "https://webhose.io/filterWebContent?token=a831f6da-e17b-4615-b33c-34a1d50b726c&size_type=news&size=10&format=json&sort=relevancy&q=",
-  }  
 
 export const Parameter = {
     Token: token,
     Format: format,
-    HighLight: highLight,
     Languages: languages,
-    Author: author,
-    Published: published,
     SiteType: siteType,
-    ThreadCountry: threadCountry,
-    URL: urls
 }
