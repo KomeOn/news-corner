@@ -3,7 +3,6 @@ import { Parameter } from  './restricedCode.js';
 import './card.css';
 import moment from 'moment';
 import Loader from './loader';
-import './recentScript';
 import './recent.css';
 
 export default function RecentList(props) {
@@ -138,7 +137,6 @@ const RecentContainer = ({ dataFootball, dataGame, dataCricket, dataCovid, dataC
   </React.Fragment>
   )
 }
-
 
 const RecentCard = ({ title, text, summary, image, author, published, url, domain, categories, sectionTitle, isExpand = false }) => {
   const [expand, setExpand] = useState(isExpand);

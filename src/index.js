@@ -2,8 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import NewsList from './result';
-import SearchFeed from './Search';
+import SearchFeed from './search';
 import RecentList from './recent';
+import HeaderNav from './header';
+import FooterPlate from './footer';
 import reportWebVitals from './reportWebVitals';
 
 class NewsFeed extends React.Component {
@@ -27,9 +29,11 @@ class NewsFeed extends React.Component {
   render() {
     return (
       <React.Fragment>
+        <HeaderNav />
         <SearchFeed onSubmit={this.searchTopic}/>
         <RecentList/>
         { this.state.searchResult.length > 0 && <NewsList topicName={this.state.topicName} searchResult={this.state.searchResult}/> }
+        <FooterPlate />
       </React.Fragment>
     );
   }
