@@ -48,6 +48,7 @@
 .image {
     width: 100%;
     border: 0.3125em solid black;
+    font-size: smaller;
 }
 
 .link {
@@ -61,7 +62,7 @@
     padding: 0.75em;
     margin-top: 0.625em;
     color: white;
-    background-color: #000;
+    background-color: #6A7750;
     text-align: center;
     cursor: pointer;
     width: 100%;
@@ -91,6 +92,9 @@
     padding: 0px 10px 0px 10px;
     border-radius: 20px;
     text-align: center;
+    background-color: #6A7750;
+    color: #ffffff;
+    letter-spacing: 0.1875em;
 }
 
 .expansion p {

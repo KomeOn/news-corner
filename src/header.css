@@ -2,13 +2,20 @@ a {
   font-family: "Arvo", serif;
 }
 
+.header-logo {
+  padding: 10px 0px;
+  height: 90px;
+  width: 265px;
+  cursor: pointer;
+}
+
 h3,
 p {
   font-family: "Oswald", sans-serif;
 }
 
 nav {
-  background-color: #333;
+  background-color: #613123;
   overflow: hidden;
   position: sticky;
   top: 0;
@@ -19,7 +26,6 @@ nav {
 }
 
 nav #bigg {
-  display: inline-flex;
   align-items: center;
   align-self: center;
   font-size: 2em;
@@ -35,7 +41,7 @@ nav a {
 }
 
 footer {
-  background-color: black;
+  background-color: #613123;
   color: white;
   padding: 15px 10px;
   text-align: center;
@@ -54,7 +60,7 @@ nav a.active {
 
 .left-aside {
   display: flex;
-  padding-left: 25vw;
+  padding-left: 27vw;
   margin-right: 1vw;
   flex-direction: row-reverse;
   justify-content: flex-end;
@@ -73,5 +79,10 @@ nav a.active {
 
   .left-aside {
     padding: 0px;
+    justify-content: center;
+  }
+
+  nav #bigg {
+    text-align: center;
   }
 }

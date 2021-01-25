@@ -149,7 +149,7 @@ const RecentCard = ({ title, text, summary, image, author, published, url, domai
       </div>
       {expand && <div className="content row"> 
                     {image && <div className="column">
-                       <img src={image} alt={title} />
+                       <img src={image} alt={title} className="post-image"/>
                       </div>}  
                     <div className="column">
                       <p>

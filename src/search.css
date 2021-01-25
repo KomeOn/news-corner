@@ -21,6 +21,7 @@ input[type="search"] {
   border-left: hidden;
   border-right: hidden;
   border-bottom: groove lightgrey; 
+  background-color: #EFD78D;
 }
 
 input[type="search"]:focus {
@@ -32,7 +33,7 @@ input[type="datetime-local"] {
   border-top: hidden;
   border-left: hidden;
   border-right: hidden;
-  
+  background-color: #EFD78D;  
 }
 
 input[type="datetime-local"]:focus {
@@ -43,11 +44,11 @@ form button {
   padding: 0.625em 2.8125em;
   margin-left: 0.625em;
   border-radius: 204px 204px 0px;
-  background-color: lightblue;
+  background-color: #CDB958;
 }
 
 form button:hover {
-  background-color: #48AAAD;
+  background-color: #835743;
   font-weight: bolder;
 }
 
@@ -71,14 +72,14 @@ form button:hover {
 
   input[type="datetime-local"]{
     width: 14.5em;
-  }
+}
 
   form button {
     padding: 0.5em 1.2125em;
   }
 } 
 
-@media screen and (min-width: 760px) {
+@media screen and (min-width: 760px) and (max-width: 1024px) {
   .Form-header {
     font-size: 1.2em;
   }
