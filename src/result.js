@@ -114,7 +114,5 @@ function ReadingSection(props) {
         </div>
 
     )
-  
-
 }
 
