@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import NewsList from './result';
-import SearchFeed from './search';
+import SearchFeed from './Search';
 import RecentList from './recent';
 import HeaderNav from './header';
 import FooterPlate from './footer';
