@@ -17,11 +17,11 @@ export default function RecentList(props) {
     useEffect(() => {
         async function fetchData() {
           setLoading(true);
-          let respCar = await fetch(`https://webhose.io/nseFilter?token=${Parameter.Token}&q='Car' language:English site.type:news`);
-          let respCovid = await fetch(`https://webhose.io/nseFilter?token=${Parameter.Token}&q='Covid 2019' language:English site.type:news`);
-          let respCricket = await fetch(`https://webhose.io/nseFilter?token=${Parameter.Token}&q='Cricket' language:English site.type:news`);
-          let respFootball = await fetch(`https://webhose.io/nseFilter?token=${Parameter.Token}&q='Football' language:English site.type:news`);
-          let respGame = await fetch(`https://webhose.io/nseFilter?token=${Parameter.Token}&q='Bethesda' language:English site.type:news`);
+          let respCar = await fetch(`https://webhose.io/nseFilter?token=${Parameter.Token}&q='Car' language:English`);
+          let respCovid = await fetch(`https://webhose.io/nseFilter?token=${Parameter.Token}&q='Covid 2019' language:English`);
+          let respCricket = await fetch(`https://webhose.io/nseFilter?token=${Parameter.Token}&q='Cricket' language:English`);
+          let respFootball = await fetch(`https://webhose.io/nseFilter?token=${Parameter.Token}&q='Football' language:English`);
+          let respGame = await fetch(`https://webhose.io/nseFilter?token=${Parameter.Token}&q='Bethesda' language:English`);
         
           let dataCar = await respCar.json();
           let dataCovid = await respCovid.json();
