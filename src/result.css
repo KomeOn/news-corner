@@ -45,6 +45,23 @@
 
 }
 
+.result-list {
+    margin: 16px 30px 60px;
+    padding: 16px 20px;
+    display: flex;
+    box-shadow: 5px 5px black;
+    align-items: center;
+
+}
+
+.result-body {
+    display: block;
+}
+
+.result-list > img {
+    max-width: 50%;
+}
+
 .image {
     width: 100%;
     border: 0.3125em solid black;
@@ -118,6 +135,9 @@
     .link {
         display: block;
         text-align: left;
+    }
+    .result-list {
+        display: block;
     }
 }
 

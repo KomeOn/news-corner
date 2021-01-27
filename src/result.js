@@ -14,8 +14,10 @@ class NewsContainer extends React.Component {
     this.state = {
       article: [],
       site: [],
+      readOpen: false,
     };
     this.readingView = this.readingView.bind(this);
+    this.readingOpen = this.readingOpen.bind(this);
   }
 
   readingView(data) {
@@ -25,33 +27,49 @@ class NewsContainer extends React.Component {
     });
   }
 
+  readingOpen(mode) {
+    this.setState({
+      readOpen: mode,
+    })
+    console.log("mode: ",this.state.readOpen);
+  }
+
   render() {
     let data = this.props.data;
     let article = this.state.article;
     let site = this.state.site;
     
     return (
-      <div className="row">
+      <React.Fragment>
+      { !this.state.readOpen && 
+    <div>
+      {data.map(news => <NewsCard topicName={data.topicName} onClick={this.readingView} key={news['article']['uuid']} {...news} onPress={this.readingOpen} />)}
+    </div>}
+      { this.state.readOpen && <div className="row">
         <div className="column-4">
-          {data.map(news => <NewsCard topicName={data.topicName} onClick={this.readingView} key={news['article']['uuid']} {...news} />)}
+          {data.map(news => <NewsCard topicName={data.topicName} onClick={this.readingView} key={news['article']['uuid']} {...news} onPress={this.readingOpen} />)}
         </div>
         <div className="column-6">
         <ReadingSection key={article['uuid']} title={article['title']} text={article['text']} summary={article['summary']} image={article['media']} author={article['author']} 
         published={article['published']} url={article['url']} categories={article['categories']} social={article['social']}
         domain={site['domain']} sectionTitle={site['section_title']} name={site['name']}  />
         </div>
-      </div>
+      </div>}
+      </React.Fragment>
     )
   }
 }
 
+var mode = false;
 class NewsCard extends React.Component {
+    
   constructor(props) {
     super(props);
     this.state = {
       expansion: false
     };
     this.handleExpansion = this.handleExpansion.bind(this);
+    this.handleRead = this.handleRead.bind(this);
   }
 
   handleExpansion() {
@@ -59,29 +77,36 @@ class NewsCard extends React.Component {
     this.setState({expansion: !expand});
   }
 
+  handleRead() {
+    mode = !mode;
+    console.log("mode1: ", mode);
+    this.props.onPress(mode);
+    this.props.onClick(this.props);
+  }
+
   render() {
     const data = this.props;
     
-    return (
-      <div className="side-news">
-        { data['article']['media']['main_image'] && <img className="image" src={data['article']['media']['main_image']} alt="display text"/> }
-        <div className="info-sec">
-          { !data['article']['author'] && <p className="txt">Anonymous</p> }
-          { data['article']['author'] && <p className="txt">{data['article']['author']}</p> }
-          { data['article']['published'] && <Moment format="DD-MM-YYYY" className="txt">{data['article']['published']}</Moment> }
-        </div>
-        <p className="title">{data['article']['title']}</p>
-        <button className="expansion" onClick={this.handleExpansion}>
-          <p>Read More....</p>
-        </button>
-        { this.state.expansion &&  
-        <div>
-          <p><small>{data['article']['summary']}</small></p>
-          <a className="link" href={data['article']['url']}>  {"<<"}   Check the original article   {">>"}  </a>
-        </div>}
-        <br></br>
-        <button className="button" onClick={()=> {this.props.onClick(this.props)}}><a href="#reading" style={{color: 'white'}}>Read in the reading section</a></button>
+    return (  
+    <div className="side-news">
+      { data['article']['media']['main_image'] && <img className="image" src={data['article']['media']['main_image']} alt="display text"/> }
+      <div className="info-sec">
+        { !data['article']['author'] && <p className="txt">Anonymous</p> }
+        { data['article']['author'] && <p className="txt">{data['article']['author']}</p> }
+        { data['article']['published'] && <Moment format="DD-MM-YYYY" className="txt">{data['article']['published']}</Moment> }
       </div>
+      <p className="title">{data['article']['title']}</p>
+      <button className="expansion" onClick={this.handleExpansion}>
+        <p>Read More....</p>
+      </button>
+      { this.state.expansion &&  
+      <div>
+        <p><small>{data['article']['summary']}</small></p>
+        <a className="link" href={data['article']['url']}>  {"<<"}   Check the original article   {">>"}  </a>
+      </div>}
+      <br></br>
+      <button className="button" onClick={this.handleRead} ><a href="#reading" style={{color: 'white'}}>Read in the reading section</a></button>
+    </div>
     );
   }
 }

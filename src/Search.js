@@ -28,14 +28,15 @@ class SearchFeed extends React.Component {
         resp = await fetch(`https://webhose.io/nseFilter?token=${Parameter.Token}&q=${this.state.search} language%3A${Parameter.Languages.English} site.type%3Anews`);
       }
       else {
-        let epooch = moment(this.state.datetime).unix();
+        let epooch = moment(this.state.datetime).unix()-19800;
         let date = moment(this.state.datetime, 'YYYY-MM-DD').valueOf();
         let dt = moment().valueOf();
-        console.log("dt: ",dt," & date: ",date)
+        console.log("dt: ",dt," & date: ",date, "epooch: ",epooch)
         if (date > dt) {
           alert("Selected date is more than today");
         }
         else {
+
           resp = await fetch(`https://webhose.io/nseFilter?token=${Parameter.Token}&ts=${epooch}&q=${this.state.search} language%3A${Parameter.Languages.English} site.type%3Anews`);
         }
       }
