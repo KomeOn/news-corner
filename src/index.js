@@ -31,7 +31,7 @@ class NewsFeed extends React.Component {
       <React.Fragment>
         <HeaderNav />
         <SearchFeed onSubmit={this.searchTopic} />
-        {/* <RecentList /> */}
+        <RecentList />
         { this.state.searchResult.length > 0 && <NewsList topicName={this.state.topicName} searchResult={this.state.searchResult} />}
         <FooterPlate />
       </React.Fragment>
