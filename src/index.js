@@ -20,19 +20,19 @@ class NewsFeed extends React.Component {
   }
 
   searchTopic = (topic, data) => {
-   this.setState({ 
-                    topicName: topic,
-                    searchResult: data,
-                    });
+    this.setState({
+      topicName: topic,
+      searchResult: data,
+    });
   };
 
   render() {
     return (
       <React.Fragment>
         <HeaderNav />
-        <SearchFeed onSubmit={this.searchTopic}/>
-        <RecentList/>
-        { this.state.searchResult.length > 0 && <NewsList topicName={this.state.topicName} searchResult={this.state.searchResult}/> }
+        <SearchFeed onSubmit={this.searchTopic} />
+        {/* <RecentList /> */}
+        { this.state.searchResult.length > 0 && <NewsList topicName={this.state.topicName} searchResult={this.state.searchResult} />}
         <FooterPlate />
       </React.Fragment>
     );
